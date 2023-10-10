@@ -241,6 +241,8 @@ For Salmon:
 #### 7.2 Complete MultiQC report
 Each execution of the pipeline returns a MultiQC report with the information of the aligner and the quantifier used in that iteration, in addition to the reports of the rest of the tools. However, there is the possibility of generating a MultiQC file that contains the results of all the executed tools, allowing to compare, for example, the results of different aligners. 
 
+#### 7.3. Perfom UMI extraction and read deduplication before alignment.
+
 
 ## Target rules
 cluster_rnaseq features a shortcut system based on specfic targets rulesrelated to the pipeline's steps.
