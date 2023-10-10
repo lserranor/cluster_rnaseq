@@ -54,6 +54,16 @@ properties:
 
     parameters:
         properties:
+            umi_processing:
+                type: object
+                properties:
+                    enabled:
+                        type: boolean
+                    umi_pattern1:
+                        type: string
+                    umi_pattern2:
+                        type: string
+
             downsampling:
                 type: object
                 properties:
@@ -63,6 +73,7 @@ properties:
                         type: integer
                     seed:
                         type: integer
+
             trimming:
                 type: object
                 properties:
@@ -105,6 +116,8 @@ properties:
             htseq-count:
                 type: object
                 properties:
+                    extra:
+                        type: string
                     mode:
                         type: string
                     strandedness:
@@ -125,12 +138,9 @@ properties:
                         type: string
                     design:
                         type: string
-                    specie:
-                        type: string
                 required:
                     - designmatrix
                     - design
-                    - specie
 
 
     
@@ -215,7 +225,27 @@ properties:
                         type: integer
                     walltime:
                         type: integer
-                        
+
+            umi_extract_single_end:
+                type: object
+                properties:
+                    threads:
+                        type: integer
+                    mem:
+                        type: integer
+                    walltime:
+                        type: integer
+
+            umi_extract_paired_end:
+                type: object
+                properties:
+                    threads:
+                        type: integer
+                    mem:
+                        type: integer
+                    walltime:
+                        type: integer
+
             trim_adapters_single_end:
                 type: object
                 properties:
@@ -277,6 +307,26 @@ properties:
                         type: integer
 
             bam_indexing:
+                type: object
+                properties:
+                    threads:
+                        type: integer
+                    mem:
+                        type: integer
+                    walltime:
+                        type: integer
+
+            umi_dedup_single_end:
+                type: object
+                properties:
+                    threads:
+                        type: integer
+                    mem:
+                        type: integer
+                    walltime:
+                        type: integer
+
+            umi_dedup_paired_end:
                 type: object
                 properties:
                     threads:
