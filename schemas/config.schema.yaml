@@ -151,7 +151,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -161,7 +161,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -171,7 +171,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer  
@@ -181,7 +181,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -191,7 +191,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -201,7 +201,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -211,7 +211,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -221,7 +221,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -231,7 +231,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -241,7 +241,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -251,7 +251,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -261,7 +261,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer  
@@ -271,7 +271,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -281,7 +281,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -291,7 +291,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -301,7 +301,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -311,7 +311,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -321,7 +321,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -331,7 +331,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -341,7 +341,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -351,7 +351,17 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
+                        type: integer
+                    walltime:
+                        type: integer
+
+            fcounts_count_matrix:
+                type: object
+                properties:
+                    threads:
+                        type: integer
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -361,7 +371,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -371,7 +381,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -381,7 +391,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -391,7 +401,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -401,7 +411,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -411,7 +421,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -421,7 +431,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -431,7 +441,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -441,7 +451,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -451,7 +461,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer
@@ -461,7 +471,7 @@ properties:
                 properties:
                     threads:
                         type: integer
-                    mem:
+                    mem_mb:
                         type: integer
                     walltime:
                         type: integer

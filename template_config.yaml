@@ -104,7 +104,7 @@ parameters:
 
     htseq-count:
         # Extra parameters for htseq-count are available in the documentation: 
-        https://htseq.readthedocs.io/en/release_0.11.1/count.html
+        # https://htseq.readthedocs.io/en/release_0.11.1/count.html
         # A recommended extra parameter is '-i', which indicates the GTF attribute 
         # to be used as feature ID to identify the counts in the output table.
         # e.g. "-i 'gene_id'" for ENSEMBL gene IDs or "-i 'gene_name'" for gene SYMBOL
