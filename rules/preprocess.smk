@@ -63,7 +63,7 @@ rule concat_R1_reads:
         get_resource('concat', 'threads')
     resources:
         mem_mb=get_resource('concat', 'mem_mb'),
-        walltime=get_resource('concat', 'walltime')
+        runtime=get_resource('concat', 'runtime')
     shell: 'cat {input} > {output}'
 
 
@@ -75,7 +75,7 @@ rule concat_R2_reads:
         get_resource('concat', 'threads')
     resources:
         mem_mb=get_resource('concat', 'mem_mb'),
-        walltime=get_resource('concat', 'walltime')
+        runtime=get_resource('concat', 'runtime')
     shell: 'cat {input} > {output}'
 
 
@@ -161,7 +161,7 @@ rule trim_adapters_single_end:
         get_resource('trim_adapters_single_end', 'threads')
     resources:
         mem_mb=get_resource('trim_adapters_single_end', 'mem_mb'),
-        walltime=get_resource('trim_adapters_single_end', 'walltime')
+        runtime=get_resource('trim_adapters_single_end', 'runtime')
     params:
         adapters='ref=' + get_params('trimming','adapters'),
         extra=get_params('trimming', 'extra')
@@ -183,7 +183,7 @@ rule trim_adapters_paired_end:
         get_resource('trim_adapters_paired_end', 'threads')
     resources:
         mem_mb=get_resource('trim_adapters_paired_end', 'mem_mb'),
-        walltime=get_resource('trim_adapters_paired_end', 'walltime')
+        runtime=get_resource('trim_adapters_paired_end', 'runtime')
     params:
         adapters='ref=' + get_params('trimming','adapters'),
         extra=get_params('trimming', 'extra') + ' tpe tbo'
@@ -203,7 +203,7 @@ if downsampling:
             get_resource('downsample_single_end', 'threads')
         resources:
             mem_mb=get_resource('downsample_single_end', 'mem_mb'),
-            walltime=get_resource('downsample_single_end', 'walltime')
+            runtime=get_resource('downsample_single_end', 'runtime')
         params:
             n=get_params('downsampling', 'n'),
             seed=get_params('downsampling', 'seed')
@@ -225,7 +225,7 @@ if downsampling:
             get_resource('downsample_paired_end', 'threads')
         resources:
             mem_mb=get_resource('downsample_paired_end', 'mem_mb'),
-            walltime=get_resource('downsample_paired_end', 'walltime')
+            runtime=get_resource('downsample_paired_end', 'runtime')
         params:
             n=get_params('downsampling', 'n'),
             seed=get_params('downsampling', 'seed')
