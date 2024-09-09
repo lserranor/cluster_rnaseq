@@ -25,7 +25,7 @@ rule deseq2_init:
 
 rule deseq2_diffexp:
     input:
-        dds = rules.deseq2_init.output.dds
+        dds = rules.deseq2_init.output.dds,
     output:
         xlsx = f"{OUTDIR}/deseq2/{deseq_path}/{{contrast}}/{{contrast}}_diffexp.xlsx",
         tsv = f"{OUTDIR}/deseq2/{deseq_path}/{{contrast}}/{{contrast}}_diffexp.tsv",
@@ -38,7 +38,7 @@ rule deseq2_diffexp:
         runtime=get_resource("deseq2_diffexp", "runtime")
     params:
         condition=var_interest,
-        levels=lambda wildcards: contrasts[wildcards.contrast]
+        levels=lambda wildcards: contrasts[wildcards.contrast],
     log: f"{LOGDIR}/deseq2/{deseq_path}/{{contrast}}/deseq2_diffexp.log"
     conda:
         "../envs/deseq2.yaml"

@@ -65,6 +65,7 @@ invisible(sapply(1:3, function(i) mergeCells(wb, sheet, cols = 1:3, rows = i)))
 writeData(wb, sheet, res_sort, startRow = 6)
 addStyle(wb, sheet, cols = 1:ncol(res_sort), rows = 6, style = boldStyle, 
          gridExpand = TRUE)
+
 conditionalFormatting(wb, sheet, cols = 1:ncol(res_sort), rows = 7:(nrow(res_sort)+6),
                       rule = "AND($C7>0, $G7<0.05, NOT(ISBLANK($G7)))", style = redStyle)
 conditionalFormatting(wb, sheet, cols = 1:ncol(res_sort), rows = 7:(nrow(res_sort)+6),
@@ -82,7 +83,7 @@ saveWorkbook(wb, file = snakemake@output[["xlsx"]], overwrite = TRUE)
 
 # GET SHRUNKEN LOG FOLD CHANGES.
 coef <- paste0(c(condition, levels[1], "vs", levels[2]), collapse = "_")
-res_shrink <- lfcShrink(dds, coef=coef, res = res, type="apeglm")
+res_shrink <- lfcShrink(dds, res = res, coef=coef, type="apeglm")
 
 # Sort by adjusted p-value
 res_shrink <- res_shrink[order(res_shrink$padj, decreasing = FALSE), ]
