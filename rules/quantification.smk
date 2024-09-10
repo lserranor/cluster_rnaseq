@@ -52,7 +52,7 @@ rule umi_dedup_single_end:
         get_resource('umi_dedup_single_end', 'threads')
     resources:
         mem_mb=get_resource('umi_dedup_single_end', 'mem_mb'),
-        walltime=get_resource('umi_dedup_single_end', 'walltime')
+        runtime=get_resource('umi_dedup_single_end', 'runtime')
     params:
         stats=f"{OUTDIR}/dedup/alignments/{{sample}}/{{sample}}"
     log:
@@ -74,7 +74,7 @@ rule umi_dedup_paired_end:
         get_resource('umi_dedup_paired_end', 'threads')
     resources:
         mem_mb=get_resource('umi_dedup_paired_end', 'mem_mb'),
-        walltime=get_resource('umi_dedup_paired_end', 'walltime')
+        runtime=get_resource('umi_dedup_paired_end', 'runtime')
     params:
         stats=f"{OUTDIR}/dedup/alignments/{{sample}}/{{sample}}"
     log:
@@ -96,18 +96,18 @@ rule dedup_bam_indexing:
         get_resource("bam_indexing", "threads")
     resources:
         mem_mb=get_resource('bam_indexing', 'mem_mb'),
-        walltime=get_resource('bam_indexing', 'walltime')
+        runtime=get_resource('bam_indexing', 'runtime')
     conda:
         '../envs/aligners.yaml'
     shell:
-        'samtools index -@ {threads} {input.aligned}'
+        'samtools index -@ {threads} {input.aligned_dedup}'
 
 
 ### HTSEQ COUNT ###
 rule htseq_count:
     input:
         bam_file=aligned_reads,
-        bai_index=aligned_reads + "bai"
+        bai_index=aligned_reads + ".bai"
     output:
         quant=f"{OUTDIR}/quant/{chosen_aligner}/htseq/{{sample}}.tab"
     threads:
