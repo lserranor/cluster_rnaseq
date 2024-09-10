@@ -91,7 +91,7 @@ if UMIs:
             get_resource('umi_extract_single_end', 'threads')
         resources:
             mem_mb=get_resource('umi_extract_single_end', 'mem_mb'),
-            walltime=get_resource('umi_extract_single_end', 'walltime')
+            runtime=get_resource('umi_extract_single_end', 'runtime')
         params:
             get_params('umi_processing','umi_pattern1')
         log:
@@ -113,7 +113,7 @@ if UMIs:
             get_resource('umi_extract_paired_end', 'threads')
         resources:
             mem_mb=get_resource('umi_extract_paired_end', 'mem_mb'),
-            walltime=get_resource('umi_extract_paired_end', 'walltime')
+            runtime=get_resource('umi_extract_paired_end', 'runtime')
         params:
             get_params('umi_processing','umi_pattern1')
         log:
@@ -136,7 +136,7 @@ if UMIs:
             get_resource('umi_extract_paired_end', 'threads')
         resources:
             mem_mb=get_resource('umi_extract_paired_end', 'mem_mb'),
-            walltime=get_resource('umi_extract_paired_end', 'walltime')
+            runtime=get_resource('umi_extract_paired_end', 'runtime')
         params:
             pattern1=get_params('umi_processing','umi_pattern1'),
             pattern2=get_params('umi_processing','umi_pattern2')

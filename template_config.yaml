@@ -76,7 +76,11 @@ parameters:
 
     trimming:
         adapters: "resources/trimming/adapters.fa"
-        extra: " ktrim=r k=23 mink=11 hdist=1"
+        extra: "ktrim=r k=23 mink=11 hdist=1"
+        # If your data is Lexogen QuantSeq 3‘ mRNA-Seq, use the trimming 
+        # parameters in the following line, replacing resource_dir with
+        # your own directory.
+        #extra: "ref=/resource_dir/polyA.fa.gz,/resource_dir/truseq.fa.gz k=13 ktrim=r useshortkmers=t mink=5 qtrim=r trimq=10 minlength=20"
 
     # By default fastq_screen is not performed. In case the user want to run
     # fastq_screen the enabled value must be set to True.
@@ -110,6 +114,7 @@ parameters:
         # e.g. "-i 'gene_id'" for ENSEMBL gene IDs or "-i 'gene_name'" for gene SYMBOL
         extra: "-i 'gene_id'"
         # Mode: "union", "intersection-strict" or "intersection-nonempty" (default: union)
+        # If your data is Lexogen QuantSeq 3‘ mRNA-Seq, use the intersection-nonempty mode
         mode: "-m union"
         # Strandness: "yes", "no" or "reverse" (default: yes)
         strandedness: "-s yes"
